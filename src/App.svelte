@@ -30,6 +30,8 @@
   onMount(hashchange)
 </script>
 
+import './normalize.css' import './style.css'
+
 <svelte:window on:hashchange={hashchange} />
 
 <main>
