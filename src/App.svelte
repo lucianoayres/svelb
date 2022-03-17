@@ -18,7 +18,7 @@
 
       item = selectedItem.find((tItem) => tItem.id === +id)
 
-      item ? window.scrollTo(0, 0) : alert('article not found')
+      item ? window.scrollTo(0, 0) : alert('Article not found')
     } else if (path.startsWith('/page')) {
       page = +path.slice(6)
       item = null

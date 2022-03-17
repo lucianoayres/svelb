@@ -1,20 +1,14 @@
 <script>
   export let item
-  export let i
-  export let offset
-
-  function comment_text() {
-    const c = item.comments_count
-    return `${c} ${c === 1 ? 'comment' : 'comments'}`
-  }
 </script>
 
 <article>
-  <span>{i + offset + 1}</span>
   <h2><a href="#/item/{item.id}">{item.title}</a></h2>
   <p class="meta">
-    <a href="#/item/{item.id}">{comment_text()}</a> by {item.user}
-    {item.time_ago}
+    {item.date}
+  </p>
+  <p>
+    {item.preview}
   </p>
 </article>
 

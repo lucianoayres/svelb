@@ -9,17 +9,12 @@
 
 <article>
   <h1>{item.title}</h1>
-  {#if item.domain}
-    <small>{item.domain}</small>
-  {/if}
 
-  <p class="meta">submitted by {item.user} {item.time_ago}</p>
+  <p class="meta">{item.date}</p>
 </article>
 
 <div class="comments">
-  {#each item.comments as comment}
-    <Comment {comment} />
-  {/each}
+  {@html item.content}
 </div>
 
 <style>

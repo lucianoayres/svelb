@@ -3,12 +3,8 @@
   import Summary from './Summary.svelte'
 
   const PAGE_SIZE = 20
-
   export let page
-
   let items
-  let offset
-
   let lastPage
 
   $: fetch('./data/posts.json')
@@ -31,7 +27,7 @@
 
 {#if items}
   {#each items as item, i}
-    <Summary {item} {i} {offset} />
+    <Summary {item} />
   {/each}
 
   {#if page > 1}

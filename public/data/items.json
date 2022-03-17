@@ -2,34 +2,7 @@
   {
     "id": 1,
     "title": "Samsung Surprising Encryption Flaw",
-    "points": 18,
-    "user": "rampatra",
-    "time": 1647347302,
-    "time_ago": "7 hours ago",
-    "type": "link",
-    "url": "https://www.schneier.com/blog/archives/2022/03/samsung-encryption-flaw.html",
-    "domain": "schneier.com",
-    "comments": [
-      {
-        "id": 30684561,
-        "level": 0,
-        "user": "jjgreen",
-        "time": 1647348267,
-        "time_ago": "7 hours ago",
-        "content": "<p>“Although our specific attacks only apply to the ≈100 million devices made by Samsung…”",
-        "comments": [
-          {
-            "id": 30686200,
-            "level": 1,
-            "user": "rampatra",
-            "time": 1647356559,
-            "time_ago": "5 hours ago",
-            "content": "<p>:)",
-            "comments": []
-          }
-        ]
-      }
-    ],
-    "comments_count": 2
+    "date": "March 17, 2022",
+    "content": "<p>Ipsum <strong>lorem</strong> et al lorem ipsum al et al lorem et al.</p>"
   }
 ]
