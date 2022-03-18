@@ -1,9 +1,8 @@
 <script>
-  export let item
-  export let returnTo
-</script>
+  import Bio from './Bio.svelte'
 
-<a href={returnTo}>&laquo; back</a>
+  export let item
+</script>
 
 <article>
   <h1>{item.title}</h1>
@@ -14,6 +13,8 @@
 <div class="comments">
   {@html item.content}
 </div>
+
+<Bio />
 
 <style>
   article {

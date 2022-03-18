@@ -1,6 +1,7 @@
 <script>
   import { beforeUpdate } from 'svelte'
   import Summary from './Summary.svelte'
+  import Bio from './Bio.svelte'
 
   const PAGE_SIZE = 20
   export let page
@@ -20,10 +21,11 @@
         : (pLimit = postsData.length)
 
       items = postsData.slice(startIndex, pLimit)
-      offset = PAGE_SIZE * (page - 1)
       window.scrollTo(0, 0)
     })
 </script>
+
+<Bio />
 
 {#if items}
   {#each items as item, i}

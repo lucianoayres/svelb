@@ -34,8 +34,10 @@
 
 <main>
   {#if item}
-    <Item {item} returnTo="#/top/{page}" />
+    <h4><a href="#/page/{page}">dev.log</a></h4>
+    <Item {item} />
   {:else if page}
+    <h2><a href="/">dev.log</a></h2>
     <List {page} />
   {/if}
 </main>
@@ -49,13 +51,13 @@
     padding: 1em;
   }
 
-  main :global(.meta) {
+  /* main :global(.meta) {
     color: #999;
     font-size: 12px;
     margin: 0 0 1em 0;
-  }
+  } */
 
   main :global(a) {
-    color: rgb(0, 0, 150);
+    color: var(--color-primary);
   }
 </style>
