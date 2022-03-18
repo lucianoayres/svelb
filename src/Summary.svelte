@@ -1,10 +1,28 @@
 <script>
   export let item
+
+  function stringToSlug(str) {
+    str = str.replace(/^\s+|\s+$/g, '')
+    str = str.toLowerCase()
+
+    const from = 'àáäâèéëêìíïîòóöôùúüûñç·/_,:;'
+    const to = 'aaaaeeeeiiiioooouuuunc------'
+    for (let i = 0, l = from.length; i < l; i++) {
+      str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i))
+    }
+
+    str = str
+      .replace(/[^a-z0-9 -]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+
+    return str
+  }
 </script>
 
 <article>
   <header>
-    <h2><a href="#/item/{item.id}">{item.title}</a></h2>
+    <h2><a href="#/item/{stringToSlug(item.title)}">{item.title}</a></h2>
     <small>{item.date}</small>
   </header>
   <section>
