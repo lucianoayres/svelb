@@ -1,27 +1,31 @@
 <script>
-  import { beforeUpdate } from 'svelte'
   import Summary from './Summary.svelte'
   import Bio from './Bio.svelte'
+  import Error from './Error.svelte'
+  import Loading from './Loading.svelte'
 
   const PAGE_SIZE = 20
   export let page
   let items
   let lastPage
+  let loadError = false
 
   $: fetch('./data/posts.json')
     .then((allPosts) => allPosts.json())
     .then((postsData) => {
       lastPage = Math.ceil(postsData.length / PAGE_SIZE)
-
       const startIndex = (page - 1) * PAGE_SIZE
-
       let pLimit = 0
+
       PAGE_SIZE <= postsData.length
         ? (pLimit = PAGE_SIZE * page)
         : (pLimit = postsData.length)
 
       items = postsData.slice(startIndex, pLimit)
       window.scrollTo(0, 0)
+    })
+    .catch((err) => {
+      loadError = true
     })
 </script>
 
@@ -39,8 +43,10 @@
   {#if page != lastPage}
     <a href="#/page/{page + 1}">next page</a>
   {/if}
+{:else if loadError}
+  <Error />
 {:else}
-  <p class="loading">loading...</p>
+  <Loading />
 {/if}
 
 {#if page > lastPage}
@@ -51,19 +57,5 @@
   a {
     padding: 2em;
     display: block;
-  }
-
-  .loading {
-    opacity: 0;
-    animation: 0.4s 0.8s forwards fade-in;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 </style>
