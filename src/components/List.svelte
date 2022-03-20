@@ -36,13 +36,19 @@
     <Summary {item} />
   {/each}
 
-  {#if page > 1}
-    <a href="#/page/{page - 1}">previous page</a>
-  {/if}
+  <div class="post-list-navigation">
+    {#if page > 1}
+      <div>
+        <a href="#/page/{page - 1}">previous page</a>
+      </div>
+    {/if}
 
-  {#if page != lastPage}
-    <a href="#/page/{page + 1}">next page</a>
-  {/if}
+    {#if page != lastPage}
+      <div>
+        <a href="#/page/{page + 1}">next page</a>
+      </div>
+    {/if}
+  </div>
 {:else if loadError}
   <Error />
 {:else}
@@ -54,8 +60,4 @@
 {/if}
 
 <style>
-  a {
-    padding: 2em;
-    display: block;
-  }
 </style>

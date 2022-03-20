@@ -53,10 +53,6 @@
 </div>
 
 <style>
-  header :global(a) {
-    color: var(--color-primary);
-  }
-
   main :global(a) {
     color: var(--color-primary);
   }
