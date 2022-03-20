@@ -5,7 +5,7 @@
 </script>
 
 {#if size === 'big'}
-  <h2><a href={link}>{BLOG_NAME}</a></h2>
+  <h1><a href={link}>{BLOG_NAME}</a></h1>
 {:else}
   <h4><a href={link}>{BLOG_NAME}</a></h4>
 {/if}

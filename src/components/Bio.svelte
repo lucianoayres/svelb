@@ -5,14 +5,14 @@
   <img
     class="bio-avatar"
     src="./images/profile-pic.png"
-    heigth={50}
-    width={50}
+    heigth={56}
+    width={56}
     alt="Luciano Ayres"
   />
   <p>
     Personal blog by <a href="https://linkedin.com/in/lucianoayres"
       >Luciano Ayres</a
-    >.<span> Ipsum lorem et al. </span>
+    >.<span> Ipsum lorem et al.</span>
   </p>
 </div>
 
