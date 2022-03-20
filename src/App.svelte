@@ -33,19 +33,30 @@
 </script>
 
 <svelte:window on:hashchange={hashChange} />
-
-<main class="global-wrapper">
+<div class="global-wrapper">
   {#if item}
-    <Logo size="small" link="#/page/{page ?? 1}" />
-    <Item {item} />
+    <header class="global-header">
+      <Logo size="small" link="#/page/{page ?? 1}" />
+    </header>
+    <main>
+      <Item {item} />
+    </main>
   {:else if page}
-    <Logo size="big" link="/" />
-    <List {page} />
+    <header class="global-header">
+      <Logo size="big" link="/" />
+    </header>
+    <main>
+      <List {page} />
+    </main>
   {/if}
   <Footer />
-</main>
+</div>
 
 <style>
+  header :global(a) {
+    color: var(--color-primary);
+  }
+
   main :global(a) {
     color: var(--color-primary);
   }

@@ -22,7 +22,7 @@
   }
 
   header {
-    margin-bottom: var(--spacing-2);
+    margin-bottom: var(--spacing-0);
   }
 
   section {

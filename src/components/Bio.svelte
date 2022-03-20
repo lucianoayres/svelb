@@ -9,10 +9,20 @@
     width={50}
     alt="Luciano Ayres"
   />
-  <p>Luciano Ayres is ipsum lorem et al lorem ipsum lorem et al ipsum lorem.</p>
-
-  <a href="https://linkedin.com/in/lucianoayres">Follow me on LinkedIn</a>
+  <p>
+    Personal blog by <a href="https://linkedin.com/in/lucianoayres"
+      >Luciano Ayres</a
+    >.<span> Ipsum lorem et al. </span>
+  </p>
 </div>
 
 <style>
+  p {
+    font-size: var(--fontSize-2);
+    line-height: var(--lineHeight-normal);
+  }
+
+  span {
+    display: block;
+  }
 </style>
