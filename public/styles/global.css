@@ -54,7 +54,7 @@
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #0984e3;
+  --color-primary: #ea1461;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -88,7 +88,7 @@ footer {
   justify-content: space-between;
   padding: var(--spacing-6) var(--spacing-0);
   margin-bottom: var(--spacing-6);
-  margin-top: var(--spacing-6);
+  margin-top: var(--spacing-16);
 }
 
 footer a {
@@ -245,10 +245,17 @@ table thead tr th {
 
 a {
   color: var(--color-primary);
+  text-decoration: none;
 }
 
 a:hover,
 a:focus {
+  text-decoration: none;
+}
+
+a[target='_blank'] {
+  color: #000;
+  box-shadow: 0 1px 0 0 var(--color-primary);
   text-decoration: none;
 }
 
@@ -257,7 +264,11 @@ a:focus {
 .global-wrapper {
   margin: var(--spacing-0) auto;
   max-width: var(--maxWidth-wrapper);
-
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
   padding: var(--spacing-0) var(--spacing-5);
 }
 
@@ -300,13 +311,7 @@ a:focus {
 }
 
 .post-list-navigation a {
-  font-size: var(--fontSize-2);
-  text-decoration: none;
-}
-
-.post-list-navigation a:hover,
-.post-list-navigation a:focus {
-  box-shadow: none;
+  font-size: var(--fontSize-1);
 }
 
 .header-link-home {
@@ -331,16 +336,6 @@ a:focus {
   margin-bottom: var(--spacing-0);
   min-width: 50px;
   border-radius: 100%;
-}
-
-.bio a {
-  box-shadow: 0 1px 0 0 var(--color-primary);
-  text-decoration: none;
-}
-
-.bio a:hover,
-.bio a:focus {
-  box-shadow: none;
 }
 
 .blog-post header h1 {

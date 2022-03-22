@@ -10,10 +10,9 @@
     alt="Luciano Ayres"
   />
   <p>
-    Personal blog by <a
-      href="https://linkedin.com/in/lucianoayres"
-      target="_blank">Luciano Ayres</a
-    >.<span> Ipsum lorem et al.</span>
+    Dev blog by <a href="https://linkedin.com/in/lucianoayres" target="_blank"
+      >Luciano Ayres</a
+    >. <span>Open source software solutions.</span>
   </p>
 </div>
 

@@ -1,7 +1,7 @@
 <script>
   export let size
   export let link
-  const BLOG_NAME = 'Reactive'
+  const BLOG_NAME = 'cloudpoint'
 </script>
 
 {#if size === 'big'}

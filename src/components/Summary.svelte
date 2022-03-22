@@ -35,8 +35,4 @@
     margin-bottom: var(--spacing-1);
     margin-top: var(--spacing-0);
   }
-
-  a {
-    color: #333;
-  }
 </style>

@@ -16,7 +16,10 @@
   </div>
   <div>
     <ul>
-      <li><a href="#">Source Code</a></li>
+      <li>
+        <a href="https://github.com/lucianoayres" target="_blank">Source Code</a
+        >
+      </li>
     </ul>
   </div>
 </footer>
