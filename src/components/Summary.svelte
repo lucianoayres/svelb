@@ -10,7 +10,7 @@
   </header>
   <section>
     <p>
-      {item.preview}
+      {item.excerpt}
     </p>
   </section>
 </article>

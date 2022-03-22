@@ -39,13 +39,13 @@
   <div class="post-list-navigation">
     {#if page > 1}
       <div>
-        <a href="#/page/{page - 1}">{'< '}Prev Page</a>
+        <a href="#/page/{page - 1}">{'← '}Prev Page</a>
       </div>
     {/if}
 
     {#if page != lastPage}
       <div>
-        <a href="#/page/{page + 1}">Next Page{' >'}</a>
+        <a href="#/page/{page + 1}">Next Page{' →'}</a>
       </div>
     {/if}
   </div>

@@ -5,29 +5,24 @@
 </script>
 
 <article>
-  <h1>{item.title}</h1>
+  <header>
+    <h1>{item.title}</h1>
+    <p class="post-meta">{item.date}</p>
+  </header>
 
-  <p class="meta">{item.date}</p>
+  <section>
+    {@html item.content}
+  </section>
+  <hr />
 </article>
-
-<div class="comments">
-  {@html item.content}
-</div>
 
 <Bio />
 
 <style>
   article {
-    margin: 0 0 1em 0;
+    margin-bottom: var(--spacing-8);
   }
-
-  a {
-    display: block;
-    margin: 0 0 1em 0;
-  }
-
-  h1 {
-    font-size: 1.4em;
-    margin: 0;
+  p.post-meta {
+    font-size: var(--fontSize-2);
   }
 </style>
