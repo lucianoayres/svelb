@@ -1,8 +1,11 @@
 <script>
   import Bio from './Bio.svelte'
+  import Seo from './Seo.svelte'
 
   export let item
 </script>
+
+<Seo title={item.title + ' - ' + item.date + ' - ' + 'cloudpoint'} />
 
 <article>
   <header>
@@ -10,7 +13,7 @@
     <p class="post-meta">{item.date}</p>
   </header>
 
-  <section>
+  <section class="post-content">
     {@html item.content}
   </section>
   <hr />

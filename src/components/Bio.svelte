@@ -12,7 +12,7 @@
   <p>
     Dev blog by <a href="https://linkedin.com/in/lucianoayres" target="_blank"
       >Luciano Ayres</a
-    >. <span>Open source software solutions.</span>
+    >. <span>I write about coding and cloud technology.</span>
   </p>
 </div>
 

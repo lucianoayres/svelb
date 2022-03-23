@@ -92,16 +92,6 @@ footer {
   font-size: var(--fontSize-1);
 }
 
-footer a {
-  text-decoration: none;
-  box-shadow: 0 1px 0 0 var(--color-primary);
-}
-
-footer a:hover,
-footer a:focus {
-  box-shadow: none;
-}
-
 hr {
   background: var(--color-accent);
   height: 1px;
@@ -184,12 +174,17 @@ p {
 
 ul,
 ol {
-  margin-left: var(--spacing-8);
+  margin-left: var(--spacing-0);
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
   list-style-position: outside;
   list-style-image: none;
+}
+
+.post-content ul,
+.post-content ol {
+  margin-left: var(--spacing-5);
 }
 
 ul li,
@@ -249,15 +244,16 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
-  text-decoration: none;
-}
-
 a[target='_blank'] {
   color: #000;
   box-shadow: 0 1px 0 0 var(--color-primary);
   text-decoration: none;
+}
+
+a[target='_blank']:hover,
+a[target='_blank']:focus {
+  color: var(--color-primary);
+  box-shadow: none;
 }
 
 /* Custom classes */
