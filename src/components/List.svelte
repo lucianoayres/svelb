@@ -1,4 +1,5 @@
 <script>
+  import Seo from './Seo.svelte'
   import Summary from './Summary.svelte'
   import Bio from './Bio.svelte'
   import Error from './Error.svelte'
@@ -28,6 +29,14 @@
       loadError = true
     })
 </script>
+
+<Seo
+  title="Blog Main Page"
+  description="Articles about coding and cloud technology"
+  keywords="blog, coding, cloud, technology"
+  language="English"
+  author="Luciano Ayres"
+/>
 
 <Bio />
 

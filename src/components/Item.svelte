@@ -3,9 +3,16 @@
   import Seo from './Seo.svelte'
 
   export let item
+  let articlePageTitle = item.title + ' - ' + item.date + ' - ' + 'cloudpoint'
 </script>
 
-<Seo title={item.title + ' - ' + item.date + ' - ' + 'cloudpoint'} />
+<Seo
+  title={articlePageTitle}
+  description="Articles about coding and cloud technology"
+  keywords="blog, coding, cloud, technology"
+  language="English"
+  author={item.author}
+/>
 
 <article>
   <header>

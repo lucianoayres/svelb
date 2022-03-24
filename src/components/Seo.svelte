@@ -1,21 +1,28 @@
 <script>
-  export let title
-  // document.title = title
+  export let title = ''
+  export let description = ''
+  export let keywords = ''
+  export let author = ''
+  export let language = 'English'
+  export let robots = 'index, follow'
 
-  // document
-  //   .querySelector('meta[name="description"]')
-  //   .setAttribute('content', 'Hello World Description')
+  document.title = title
 
-  // console.log(document.querySelector('meta[name="description"]'))
+  addMetaTag('title', title)
+  addMetaTag('description', description)
+  addMetaTag('keywords', keywords)
+  addMetaTag('author', author)
+  addMetaTag('language', language)
+  addMetaTag('robots', robots)
 
-  function test() {
-    console.log('Hello Test')
+  function addMetaTag(name, content) {
+    const meta = document.createElement('meta')
+
+    const preExistingTag = document.querySelector(`[name=${name}]`)
+    if (preExistingTag) preExistingTag.remove()
+
+    meta['name'] = name
+    meta['content'] = content
+    document.getElementsByTagName('head')[0].appendChild(meta)
   }
 </script>
-
-<svelte:window on:beforeunload={test} />
-
-<!-- <svelte:head>
-  <title>{title}</title>
-  <meta name="description" content="Updated Description" />
-</svelte:head> -->
