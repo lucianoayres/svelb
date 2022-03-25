@@ -1,27 +1,24 @@
 <script>
+  import { BLOG_NAME } from '../constants'
   import Bio from './Bio.svelte'
   import Seo from './Seo.svelte'
 
   export let item
-  let articlePageTitle = item.title + ' - ' + item.date + ' - ' + 'cloudpoint'
+  const { title, excerpt, date, content } = item
+
+  const pageTitle = `${title} - ${date} - ${BLOG_NAME}`
 </script>
 
-<Seo
-  title={articlePageTitle}
-  description="Articles about coding and cloud technology"
-  keywords="blog, coding, cloud, technology"
-  language="English"
-  author={item.author}
-/>
+<Seo title={pageTitle} description={excerpt} />
 
 <article>
   <header>
-    <h1>{item.title}</h1>
-    <p class="post-meta">{item.date}</p>
+    <h1>{title}</h1>
+    <p class="post-meta">{date}</p>
   </header>
 
   <section class="post-content">
-    {@html item.content}
+    {@html content}
   </section>
   <hr />
 </article>

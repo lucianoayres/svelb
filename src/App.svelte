@@ -1,5 +1,10 @@
 <script>
   import { onMount } from 'svelte'
+  import {
+    AUTHOR_GITHUB_URL,
+    AUTHOR_LINKEDIN_URL,
+    SOURCE_CODE_URL as SOURCE_CODE_URL
+  } from './constants'
   import List from './components/List.svelte'
   import Item from './components/Item.svelte'
   import Logo from './components/Logo.svelte'
@@ -51,5 +56,9 @@
       </main>
     {/if}
   </div>
-  <Footer />
+  <Footer
+    gitHubUrl={AUTHOR_GITHUB_URL}
+    linkedInUrl={AUTHOR_LINKEDIN_URL}
+    sourceCodeUrl={SOURCE_CODE_URL}
+  />
 </div>

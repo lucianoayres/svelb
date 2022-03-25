@@ -33,9 +33,6 @@
 <Seo
   title="Blog Main Page"
   description="Articles about coding and cloud technology"
-  keywords="blog, coding, cloud, technology"
-  language="English"
-  author="Luciano Ayres"
 />
 
 <Bio />

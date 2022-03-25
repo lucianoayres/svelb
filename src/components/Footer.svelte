@@ -1,24 +1,24 @@
 <script>
+  export let gitHubUrl = ''
+  export let linkedInUrl = ''
+  export let sourceCodeUrl = ''
 </script>
 
 <footer>
   <div>
     <ul>
       <li>
-        <a href="https://github.com/lucianoayres" target="_blank">GitHub</a>
+        <a href={gitHubUrl} target="_blank">GitHub</a>
       </li>
       <li>
-        <a href="https://linkedin.com/in/lucianoayres" target="_blank"
-          >LinkedIn</a
-        >
+        <a href={linkedInUrl} target="_blank">LinkedIn</a>
       </li>
     </ul>
   </div>
   <div>
     <ul>
       <li>
-        <a href="https://github.com/lucianoayres" target="_blank">Source Code</a
-        >
+        <a href={sourceCodeUrl} target="_blank">Source Code</a>
       </li>
     </ul>
   </div>
