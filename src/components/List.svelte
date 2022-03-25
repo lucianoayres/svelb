@@ -5,8 +5,9 @@
   import Error from './Error.svelte'
   import Loading from './Loading.svelte'
 
-  const PAGE_SIZE = 20
   export let page
+
+  const PAGE_SIZE = 20
   let items
   let lastPage
   let loadError = false

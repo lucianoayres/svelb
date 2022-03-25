@@ -1,5 +1,6 @@
 <script>
   import { BLOG_NAME } from '../constants'
+
   import Bio from './Bio.svelte'
   import Seo from './Seo.svelte'
 
