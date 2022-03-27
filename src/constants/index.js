@@ -12,3 +12,5 @@ export const POSTS_API_URL = './data/posts.json'
 
 export const POST_PATH = '/post'
 export const PAGE_PATH = '/page'
+
+export const POSTS_PER_PAGE = 10

@@ -1,5 +1,5 @@
 <script>
-  import { POSTS_INDEX_API_URL, PAGE_PATH } from '../constants'
+  import { POSTS_INDEX_API_URL, PAGE_PATH, POSTS_PER_PAGE } from '../constants'
   import { read } from '../services/httpService'
   import Seo from './Seo.svelte'
   import Summary from './Summary.svelte'
@@ -9,19 +9,18 @@
 
   export let page
 
-  const PAGE_SIZE = 20
   let items
   let lastPage
   let loadError = false
 
   $: read(POSTS_INDEX_API_URL)
     .then((postsData) => {
-      lastPage = Math.ceil(postsData.length / PAGE_SIZE)
-      const startIndex = (page - 1) * PAGE_SIZE
+      lastPage = Math.ceil(postsData.length / POSTS_PER_PAGE)
+      const startIndex = (page - 1) * POSTS_PER_PAGE
       let pLimit = 0
 
-      PAGE_SIZE <= postsData.length
-        ? (pLimit = PAGE_SIZE * page)
+      POSTS_PER_PAGE <= postsData.length
+        ? (pLimit = POSTS_PER_PAGE * page)
         : (pLimit = postsData.length)
 
       items = postsData.slice(startIndex, pLimit)
