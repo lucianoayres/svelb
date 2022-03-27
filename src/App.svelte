@@ -1,34 +1,26 @@
 <script>
-  import {
-    AUTHOR_GITHUB_URL,
-    AUTHOR_LINKEDIN_URL,
-    SOURCE_CODE_URL,
-    POSTS_API_URL,
-    POST_PATH,
-    PAGE_PATH
-  } from './constants'
-
   import { onMount } from 'svelte'
-
-  import List from './components/List.svelte'
-  import Post from './components/Post.svelte'
-  import Logo from './components/Logo.svelte'
   import Footer from './components/Footer.svelte'
-
+  import List from './components/List.svelte'
+  import Logo from './components/Logo.svelte'
+  import Post from './components/Post.svelte'
+  import { PAGE_PATH, POSTS_API_URL, POST_PATH } from './constants'
   import {
-    getPath,
     checkPathType,
-    getPageNumber,
-    getPostSlugFromPath,
     filterByKey,
-    scrollToTop,
-    redirectToPage
+    getPageNumber,
+    getPath,
+    getPostSlugFromPath,
+    redirectToPage,
+    scrollToTop
   } from './helpers'
-
   import { read } from './services/httpService'
 
   let post
   let page = 1
+
+  let logoSize = 'big'
+  let logoLink = '/'
 
   async function hashChange() {
     const path = getPath()
@@ -36,13 +28,17 @@
     const isPage = checkPathType(path, PAGE_PATH)
 
     if (isPost) {
-      const slug = getPostSlugFromPath(path, POST_PATH)
+      const slugFromPath = getPostSlugFromPath(path, POST_PATH)
       let allPostsData = await read(POSTS_API_URL)
-      post = filterByKey(allPostsData, 'slug', slug)
+      post = filterByKey(allPostsData, 'slug', slugFromPath)
       post ? scrollToTop() : alert('Article not found')
+      logoSize = 'small'
+      logoLink = `#${PAGE_PATH}/${page}`
     } else if (isPage) {
       page = getPageNumber(path, PAGE_PATH)
       post = null
+      logoSize = 'big'
+      logoLink = '/'
     } else {
       redirectToPage(1, PAGE_PATH)
     }
@@ -54,25 +50,16 @@
 <svelte:window on:hashchange={hashChange} />
 <div class="global-wrapper">
   <div class="main-content-wrapper">
-    {#if post}
-      <header class="global-header">
-        <Logo size="small" link="#{PAGE_PATH}/{page}" />
-      </header>
-      <main>
+    <header class="global-header">
+      <Logo size={logoSize} link={logoLink} />
+    </header>
+    <main>
+      {#if post}
         <Post {post} />
-      </main>
-    {:else if page}
-      <header class="global-header">
-        <Logo size="big" link="/" />
-      </header>
-      <main>
+      {:else if page}
         <List {page} />
-      </main>
-    {/if}
+      {/if}
+    </main>
   </div>
-  <Footer
-    gitHubUrl={AUTHOR_GITHUB_URL}
-    linkedInUrl={AUTHOR_LINKEDIN_URL}
-    sourceCodeUrl={SOURCE_CODE_URL}
-  />
+  <Footer />
 </div>

@@ -1,7 +1,13 @@
 <script>
-  export let gitHubUrl = ''
-  export let linkedInUrl = ''
-  export let sourceCodeUrl = ''
+  import {
+    AUTHOR_GITHUB_URL,
+    AUTHOR_LINKEDIN_URL,
+    SOURCE_CODE_URL
+  } from '../constants'
+
+  export let gitHubUrl = AUTHOR_GITHUB_URL
+  export let linkedInUrl = AUTHOR_LINKEDIN_URL
+  export let sourceCodeUrl = SOURCE_CODE_URL
 </script>
 
 <footer>
