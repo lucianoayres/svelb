@@ -1,5 +1,11 @@
 <script>
-  import { POSTS_INDEX_API_URL, PAGE_PATH, POSTS_PER_PAGE } from '../constants'
+  import {
+    BLOG_DESCRIPTION,
+    BLOG_MAIN_PAGE_TITLE,
+    POSTS_INDEX_API_URL,
+    PAGE_PATH,
+    POSTS_PER_PAGE
+  } from '../constants'
   import { read } from '../services/httpService'
   import Seo from './Seo.svelte'
   import Summary from './Summary.svelte'
@@ -31,10 +37,7 @@
     })
 </script>
 
-<Seo
-  title="Blog Main Page"
-  description="Articles about coding and cloud technology"
-/>
+<Seo title={BLOG_MAIN_PAGE_TITLE} description={BLOG_DESCRIPTION} />
 
 <Bio />
 
