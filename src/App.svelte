@@ -28,7 +28,7 @@
   import { read } from './services/httpService'
 
   let post
-  let page
+  let page = 1
 
   async function hashChange() {
     const path = getPath()
@@ -56,7 +56,7 @@
   <div class="main-content-wrapper">
     {#if post}
       <header class="global-header">
-        <Logo size="small" link="#{PAGE_PATH}/{page ?? 1}" />
+        <Logo size="small" link="#{PAGE_PATH}/{page}" />
       </header>
       <main>
         <Post {post} />
