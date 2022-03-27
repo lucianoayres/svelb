@@ -4,8 +4,8 @@
   import Bio from './Bio.svelte'
   import Seo from './Seo.svelte'
 
-  export let item
-  const { title, excerpt, date, content } = item
+  export let post
+  const { title, excerpt, date, content } = post
 
   const pageTitle = `${title} - ${date} - ${BLOG_NAME}`
 </script>

@@ -1,4 +1,6 @@
 <script>
+  import { POSTS_INDEX_API_URL, PAGE_PATH } from '../constants'
+  import { read } from '../services/httpService'
   import Seo from './Seo.svelte'
   import Summary from './Summary.svelte'
   import Bio from './Bio.svelte'
@@ -12,8 +14,7 @@
   let lastPage
   let loadError = false
 
-  $: fetch('./data/posts.json')
-    .then((allPosts) => allPosts.json())
+  $: read(POSTS_INDEX_API_URL)
     .then((postsData) => {
       lastPage = Math.ceil(postsData.length / PAGE_SIZE)
       const startIndex = (page - 1) * PAGE_SIZE
@@ -46,13 +47,13 @@
   <div class="post-list-navigation">
     {#if page > 1}
       <div>
-        <a href="#/page/{page - 1}">{'← '}Prev Page</a>
+        <a href="#{PAGE_PATH}/{page - 1}">{'← '}Prev Page</a>
       </div>
     {/if}
 
     {#if page != lastPage}
       <div>
-        <a href="#/page/{page + 1}">Next Page{' →'}</a>
+        <a href="#{PAGE_PATH}/{page + 1}">Next Page{' →'}</a>
       </div>
     {/if}
   </div>

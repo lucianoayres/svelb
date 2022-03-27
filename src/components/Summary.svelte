@@ -1,11 +1,12 @@
 <script>
+  import { POST_PATH } from '../constants'
   import { stringToSlug } from '../helpers'
   export let item
 </script>
 
 <article>
   <header>
-    <h2><a href="#/post/{stringToSlug(item.title)}">{item.title}</a></h2>
+    <h2><a href="#{POST_PATH}/{stringToSlug(item.title)}">{item.title}</a></h2>
     <small>{item.date}</small>
   </header>
   <section>
