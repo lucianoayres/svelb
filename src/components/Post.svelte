@@ -24,8 +24,6 @@
   <hr />
 </article>
 
-<Bio />
-
 <style>
   article {
     margin-bottom: var(--spacing-8);

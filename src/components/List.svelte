@@ -39,8 +39,6 @@
 
 <Seo title={BLOG_MAIN_PAGE_TITLE} description={BLOG_DESCRIPTION} />
 
-<Bio />
-
 {#if items}
   {#each items as item, i}
     <Summary {item} />

@@ -1,7 +1,7 @@
 <script>
   import { PAGE_PATH } from '../constants'
   import Footer from './Footer.svelte'
-  import Header from './Header.svelte'
+  import Bio from './Bio.svelte'
   import List from './List.svelte'
   import Logo from './Logo.svelte'
   import Post from './Post.svelte'
@@ -27,13 +27,15 @@
 
 <div class="global-wrapper">
   <div class="main-content-wrapper">
-    <Header>
+    <header class="global-header">
       <Logo {...logoOptions[contentType]} />
-    </Header>
+    </header>
     <main>
       {#if post}
         <Post {post} />
+        <Bio />
       {:else if page}
+        <Bio />
         <List {page} />
       {/if}
     </main>

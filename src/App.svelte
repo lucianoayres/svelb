@@ -32,6 +32,7 @@
       content.page = getPageNumber(path, PAGE_PATH)
       content.post = null
     } else {
+      //page not found
       redirectToPage(1, PAGE_PATH)
     }
   }
