@@ -3,33 +3,30 @@
     BLOG_DESCRIPTION,
     BLOG_MAIN_PAGE_TITLE,
     PAGE_PATH,
-    POSTS_INDEX_API_URL,
     POSTS_PER_PAGE
   } from '../constants'
-  import { read } from '../services/httpService'
+
   import Error from './Error.svelte'
   import Loading from './Loading.svelte'
+  import Navigation from './Navigation.svelte'
   import Seo from './Seo.svelte'
   import Summary from './Summary.svelte'
 
+  import { queryPaginatedData } from '../services/httpService'
+  import { getNextPageHref, getPreviousPageHref, scrollToTop } from '../helpers'
+
   export let page
 
-  let items
+  let posts
   let lastPage
   let loadError = false
 
-  $: read(POSTS_INDEX_API_URL)
-    .then((postsData) => {
-      lastPage = Math.ceil(postsData.length / POSTS_PER_PAGE)
-      const startIndex = (page - 1) * POSTS_PER_PAGE
-      let pLimit = 0
-
-      POSTS_PER_PAGE <= postsData.length
-        ? (pLimit = POSTS_PER_PAGE * page)
-        : (pLimit = postsData.length)
-
-      items = postsData.slice(startIndex, pLimit)
-      window.scrollTo(0, 0)
+  $: queryPaginatedData(page, POSTS_PER_PAGE)
+    .then((paginatedData) => {
+      const { data, lastPageNumber } = paginatedData
+      posts = data
+      lastPage = lastPageNumber
+      scrollToTop()
     })
     .catch((err) => {
       loadError = true
@@ -38,24 +35,16 @@
 
 <Seo title={BLOG_MAIN_PAGE_TITLE} description={BLOG_DESCRIPTION} />
 
-{#if items}
-  {#each items as item, i}
-    <Summary {item} />
+{#if posts}
+  {#each posts as post}
+    <Summary {post} />
   {/each}
-
-  <div class="post-list-navigation">
-    {#if page > 1}
-      <div>
-        <a href="#{PAGE_PATH}/{page - 1}">{'← '}Prev Page</a>
-      </div>
-    {/if}
-
-    {#if page != lastPage}
-      <div>
-        <a href="#{PAGE_PATH}/{page + 1}">Next Page{' →'}</a>
-      </div>
-    {/if}
-  </div>
+  <Navigation
+    {page}
+    {lastPage}
+    previousHref={getPreviousPageHref(PAGE_PATH, page)}
+    nextHref={getNextPageHref(PAGE_PATH, page)}
+  />
 {:else if loadError}
   <Error />
 {:else}
@@ -63,8 +52,6 @@
 {/if}
 
 {#if page > lastPage}
+  <!-- {  TODO: Add page not found } -->
   {(window.location.href = '/')}
 {/if}
-
-<style>
-</style>

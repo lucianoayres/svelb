@@ -16,5 +16,6 @@ export const POSTS_PER_PAGE = 10
 export const POST_PATH = '/post'
 export const PAGE_PATH = '/page'
 
+// TODO: Move constants to ENV VARS (.env file)
 export const POSTS_INDEX_API_URL = './data/postsIndex.json'
 export const POSTS_API_URL = './data/posts.json'
