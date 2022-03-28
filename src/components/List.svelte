@@ -2,16 +2,15 @@
   import {
     BLOG_DESCRIPTION,
     BLOG_MAIN_PAGE_TITLE,
-    POSTS_INDEX_API_URL,
     PAGE_PATH,
+    POSTS_INDEX_API_URL,
     POSTS_PER_PAGE
   } from '../constants'
   import { read } from '../services/httpService'
-  import Seo from './Seo.svelte'
-  import Summary from './Summary.svelte'
-  import Bio from './Bio.svelte'
   import Error from './Error.svelte'
   import Loading from './Loading.svelte'
+  import Seo from './Seo.svelte'
+  import Summary from './Summary.svelte'
 
   export let page
 
