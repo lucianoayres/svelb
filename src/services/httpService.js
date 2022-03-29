@@ -1,4 +1,4 @@
-import { POSTS_INDEX_API_URL, POSTS_API_URL } from '../constants'
+import { POSTS_API_URL } from '../constants'
 
 async function read(url) {
   const data = await fetch(url)
@@ -12,12 +12,31 @@ export async function queryItemByKey(keyName, keyValue) {
 }
 
 export async function queryPaginatedData(currentPage, itemsPerPage) {
-  const data = await read(POSTS_INDEX_API_URL)
+  const data = await queryFilterByKeys([
+    'id',
+    'title',
+    'slug',
+    'excerpt',
+    'date'
+  ])
 
   return {
     data: getPaginatedItems(data, currentPage, itemsPerPage),
     lastPageNumber: getLastPageNumber(data.length, itemsPerPage)
   }
+}
+
+async function queryFilterByKeys(keys) {
+  const data = await read(POSTS_API_URL)
+  const result = []
+  data.forEach((item) => {
+    result.push(
+      Object.fromEntries(
+        Object.entries(item).filter(([key, _]) => keys.includes(key))
+      )
+    )
+  })
+  return result
 }
 
 function filterByKey(itemData, targetKey, keyValue) {

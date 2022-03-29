@@ -9,18 +9,90 @@
   },
   {
     "id": 2,
-    "title": "Samsung Surprising Encryption Flaw",
-    "slug": "wow-ipsum-lorem-et-al",
-    "excerpt": "Ipsum lorem et al lorem ipsum al et al lorem et al.",
-    "date": "March 17, 2022",
-    "content": "Ipsum lorem et al."
+    "title": "Apple Announces New iPhone Pre-Sales",
+    "slug": "apple-announces-new-iphone-pre-sales",
+    "excerpt": "The new iphone will arrive on June 10.",
+    "date": "March 16, 2022",
+    "content": "Apple!"
   },
   {
     "id": 3,
-    "title": "Samsung Surprising Encryption Flaw",
-    "slug": "xz-wow-ipsum-lorem-et-al",
-    "excerpt": "Ipsum lorem et al lorem ipsum al et al lorem et al.",
-    "date": "March 17, 2022",
-    "content": "<script>console.log('hello world')</script>"
+    "title": "Google Sues Facebook for Piracy",
+    "slug": "google-sues-facebook-for-piracy",
+    "excerpt": "That's real trouble for sure!.",
+    "date": "March 15, 2022",
+    "content": "Google!"
+  },
+  {
+    "id": 4,
+    "title": "Amazon AWS is Down",
+    "slug": "amazon-aws-is-down",
+    "excerpt": "For the second time this week.",
+    "date": "March 14, 2022",
+    "content": "Amazon!"
+  },
+  {
+    "id": 5,
+    "title": "Microsoft Azure Hacked",
+    "slug": "microsoft-azure-hacked",
+    "excerpt": "Users are scared!",
+    "date": "March 13, 2022",
+    "content": "Microsoft!"
+  },
+  {
+    "id": 6,
+    "title": "Uber is Leaving Latin America",
+    "slug": "uber-is-leaving-latin-america",
+    "excerpt": "Company says operations end on March 30.",
+    "date": "March 12, 2022",
+    "content": "Uber!"
+  },
+  {
+    "id": 7,
+    "title": "Amazon AWS is Down",
+    "slug": "amazon-aws-is-down",
+    "excerpt": "For the second time this week.",
+    "date": "March 11, 2022",
+    "content": "Yeah, right!"
+  },
+  {
+    "id": 8,
+    "title": "The day console.log Saved My Life",
+    "slug": "the-day-console-log-saved-my-life",
+    "excerpt": "A true story.",
+    "date": "March 10, 2022",
+    "content": "console.log!"
+  },
+  {
+    "id": 9,
+    "title": "Vue.js versus Angular",
+    "slug": "vue-js-versus-angular",
+    "excerpt": "For the second time this week.",
+    "date": "March 9, 2022",
+    "content": "Yeah, right!"
+  },
+  {
+    "id": 10,
+    "title": "Svelte versus React",
+    "slug": "svelte-versus-react",
+    "excerpt": "Who is the fatest?",
+    "date": "March 8, 2022",
+    "content": "Svelte!"
+  },
+  {
+    "id": 11,
+    "title": "Eletronic Arts Buys Blizzard",
+    "slug": "eletronic-arts-buys-blizzard",
+    "excerpt": "A 2 billion dollars deal.",
+    "date": "March 7, 2022",
+    "content": "Eletronic Arts!"
+  },
+  {
+    "id": 12,
+    "title": "Is Google Cloud Worth it?",
+    "slug": "is-google-cloud-worth-it",
+    "excerpt": "Developers speak their minds.",
+    "date": "March 6, 2022",
+    "content": "Google!"
   }
 ]
