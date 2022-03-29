@@ -1,10 +1,9 @@
 <script>
-  import { addMetaTag } from '../helpers'
   export let title = ''
   export let description = ''
-
-  document.title = title
-
-  addMetaTag('title', title)
-  addMetaTag('description', description)
 </script>
+
+<svelte:head>
+  <title>{title}</title>
+  <meta name="description" content={description} />
+</svelte:head>

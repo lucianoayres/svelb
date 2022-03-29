@@ -1,4 +1,3 @@
-export * from './addMetaTag'
 export * from './stringToSlug'
 export * from './getPath'
 export * from './checkPathType'
