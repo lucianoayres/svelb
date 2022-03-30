@@ -18,10 +18,11 @@
     },
     post: {
       size: 'small',
-      link: `#${PAGE_PATH}/${page}`
+      link: null
     }
   }
 
+  $: logoOptions.post.link = `#${PAGE_PATH}/${page}`
   $: post ? (contentType = 'post') : (contentType = 'page')
 </script>
 

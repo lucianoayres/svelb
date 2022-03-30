@@ -52,6 +52,5 @@
 {/if}
 
 {#if page > lastPage}
-  <!-- {  TODO: Add page not found } -->
   {(window.location.href = '/')}
 {/if}

@@ -1,6 +1,3 @@
-<script>
-</script>
-
 <p class="loading">loading...</p>
 
 <style>
