@@ -16,7 +16,7 @@
     <p class="post-meta">{date}</p>
   </header>
 
-  <section class="post-content">
+  <section>
     {@html content}
   </section>
   <hr />

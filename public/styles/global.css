@@ -32,6 +32,8 @@
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --fontFamily-serif: 'Merriweather', 'Georgia', Cambria, 'Times New Roman',
     Times, serif;
+  --fontFamily-monospace: Consolas, Menlo, Monaco, source-code-pro, Courier New,
+    monospace;
   --font-body: var(--fontFamily-serif);
   --font-heading: var(--fontFamily-sans);
   --fontWeight-normal: 400;
@@ -178,13 +180,8 @@ ol {
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-image: none;
-}
-
-.post-content ul,
-.post-content ol {
-  margin-left: var(--spacing-5);
 }
 
 ul li,
@@ -254,6 +251,40 @@ a[target='_blank']:hover,
 a[target='_blank']:focus {
   color: var(--color-primary);
   box-shadow: none;
+}
+
+pre {
+  tab-size: var(--spacing-4);
+}
+
+code {
+  display: block;
+  font-family: var(--fontFamily-monospace);
+  font-size: var(--fontSize-0);
+  font-weight: var(--fontWeight-normal);
+  overflow: auto;
+  border-radius: var(--spacing-3);
+  color: rgb(255, 255, 255);
+  background-color: rgb(28, 27, 27);
+  padding: 2em;
+}
+
+/* --color-primary: #ea1461;
+  --color-text: #2e353f;
+  --color-text-light: #4f5969;
+  --color-heading: #1a202c;
+  --color-heading-black: black;
+  --color-accent: #d1dce5; */
+
+/* Code in text */
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #ffeff0;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 50rem 0.3rem 0.2rem;
 }
 
 /* Custom classes */

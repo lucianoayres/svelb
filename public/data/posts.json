@@ -11,7 +11,7 @@
     "title": "Apple Announces New iPhone Pre-Sales",
     "excerpt": "The new iphone will arrive on June 10.",
     "date": "March 2, 2022",
-    "content": "Apple!"
+    "content": "<h1>Sample Markdown</h1><p>This is some basic, sample markdown.</p><h2>Second Heading</h2><ul><li>Unordered lists, and:<ol><li>One</li><li>Two</li><li>Three</li></ol></li><li>More</li></ul><blockquote><p>Blockquote</p></blockquote><p>And <strong>bold</strong>, <em>italics</em>, and even <em>italics and later <strong>bold</strong></em>. Even <del>strikethrough</del>. <a href='https://markdowntohtml.com'>A link</a> to somewhere.</p><p>And code highlighting:</p><pre><code>import { stringToSlug } from './stringToSlug'<br/> <p>export function addSlugToAllItems(data) {<br />    return data.map((item) => {<br /> return { ...item, slug: stringToSlug(item.title) }<br /> })<br /> }</p></code></pre><p>Or inline code like <code>var foo = 'bar';</code>.</p><p>Or an image of bears</p><p></p><p>The end ...</p>"
   },
   {
     "id": 3,
@@ -74,7 +74,7 @@
     "title": "Eletronic Arts Buys Blizzard",
     "excerpt": "A 2 billion dollars deal.",
     "date": "March 11, 2022",
-    "content": "Eletronic Arts!"
+    "content": "<p>Code example:</p><pre><code id='htmlViewer'><span style='color:rgb(136, 174, 206); font-weight:400;'>import</span> { stringToSlug } <span style='color:rgb(136, 174, 206); font-weight:400;'>from</span> <span style='color:rgb(181, 189, 104); font-weight:400;'>'./stringToSlug'</span>\r\r<span style='color:rgb(136, 174, 206); font-weight:400;'>export</span> <span style='color:rgb(255, 255, 255); font-weight:400;'><span style='color:rgb(136, 174, 206); font-weight:400;'>function</span><span style='color:rgb(240, 141, 73); font-weight:400;'> addSlugToAllItems</span>(<span style='color:rgb(255, 255, 255); font-weight:400;'>data</span>) </span>{\r\t<span style='color:rgb(136, 174, 206); font-weight:400;'>return</span> data.map(<span style='color:rgb(255, 255, 255); font-weight:400;'>(<span style='color:rgb(255, 255, 255); font-weight:400;'>item</span>) =></span> {\r\t\t<span style='color:rgb(136, 174, 206); font-weight:400;'>return</span> { ...item, <span style='color:rgb(136, 174, 206); font-weight:400;'>slug</span>: stringToSlug(item.title) }\r\t})\r}\r</code></pre>"
   },
   {
     "id": 12,
