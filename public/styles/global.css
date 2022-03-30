@@ -27,6 +27,7 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   --spacing-32: 8rem;
+  --spacing-negative: -1.3125rem;
   --fontFamily-sans: Montserrat, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
@@ -62,6 +63,16 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-code-primary: #e0e0e0;
+  --color-code-reserved-word: #fc69c1;
+  --color-code-object-name: #bfabed;
+  --color-code-method-name: #4ee718;
+  --color-code-parameter-name: #f0932b;
+  --color-code-string-value: #f9f724;
+  --color-code-punctuation-character: #fc69c1;
+  --color-code-highlight: #0e2439;
+  --color-code-highlight-border: #fc69c1;
+  --color-code-background: #081726;
 }
 
 /* HTML elements */
@@ -261,20 +272,47 @@ code {
   display: block;
   font-family: var(--fontFamily-monospace);
   font-size: var(--fontSize-0);
-  font-weight: var(--fontWeight-normal);
+  font-weight: var(--fontWeight-medium);
   overflow: auto;
   border-radius: var(--spacing-3);
-  color: rgb(255, 255, 255);
-  background-color: rgb(28, 27, 27);
-  padding: 2em;
+  color: var(--color-code-primary);
+  background-color: var(--color-code-background);
+  padding: var(--spacing-6);
+  margin-right: var(--spacing-negative);
+  margin-left: var(--spacing-negative);
 }
 
-/* --color-primary: #ea1461;
-  --color-text: #2e353f;
-  --color-text-light: #4f5969;
-  --color-heading: #1a202c;
-  --color-heading-black: black;
-  --color-accent: #d1dce5; */
+code span.reserved-word {
+  color: var(--color-code-reserved-word);
+}
+
+code span.object {
+  color: var(--color-code-object-name);
+}
+
+code span.method {
+  color: var(--color-code-method-name);
+}
+
+code span.parameter {
+  color: var(--color-code-parameter-name);
+}
+
+code span.string {
+  color: var(--color-code-string-value);
+}
+
+code span.punctuation {
+  color: var(--color-code-punctuation-character);
+}
+
+code div.highlight {
+  margin-left: calc(-1 * var(--spacing-6));
+  margin-right: calc(-1 * var(--spacing-6));
+  background-color: var(--color-code-highlight);
+  padding-left: calc(var(--spacing-6) - var(--spacing-1));
+  border-left: var(--spacing-1) solid var(--color-code-highlight-border);
+}
 
 /* Code in text */
 p > code,
@@ -393,5 +431,8 @@ td > code {
   ul,
   ol {
     list-style-position: inside;
+  }
+  code {
+    border-radius: var(--spacing-0);
   }
 }
