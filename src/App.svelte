@@ -25,6 +25,7 @@
     if (isPost) {
       const slugFromPath = getPostSlugFromPath(path, POST_PATH)
       content.post = await queryItemByKey('slug', slugFromPath)
+      // TODO: Add page not found
       content.post ? scrollToTop() : alert('Article not found')
     } else if (isPage) {
       content.page = getPageNumber(path, PAGE_PATH)
