@@ -1,4 +1,11 @@
 import { POSTS_API_URL } from '../constants'
+import {
+  addSlugToAllItems,
+  filterByKey,
+  getLastPageNumber,
+  getPaginatedItems,
+  orderItems
+} from '../helpers'
 
 async function read(url) {
   const data = await fetch(url)
@@ -7,26 +14,29 @@ async function read(url) {
 
 export async function queryItemByKey(keyName, keyValue) {
   const data = await read(POSTS_API_URL)
-  const item = filterByKey(data, keyName, keyValue)
+  const mutatedData = addSlugToAllItems(data)
+  const item = filterByKey(mutatedData, keyName, keyValue)
+
   return item ? item : false
 }
 
-export async function queryPaginatedData(currentPage, itemsPerPage) {
-  const data = await queryFilterByKeys([
-    'id',
-    'title',
-    'slug',
-    'excerpt',
-    'date'
-  ])
+export async function queryPaginatedData(
+  currentPage,
+  itemsPerPage,
+  keys = ['id', 'title', 'slug', 'excerpt', 'date'],
+  order = 'DESC'
+) {
+  const data = await queryFilterByKeys(keys)
+  const orderedData = orderItems(data, order)
+  const mutatedData = addSlugToAllItems(orderedData)
 
   return {
-    data: getPaginatedItems(data, currentPage, itemsPerPage),
-    lastPageNumber: getLastPageNumber(data.length, itemsPerPage)
+    data: getPaginatedItems(mutatedData, currentPage, itemsPerPage),
+    lastPageNumber: getLastPageNumber(mutatedData.length, itemsPerPage)
   }
 }
 
-async function queryFilterByKeys(keys) {
+export async function queryFilterByKeys(keys) {
   const data = await read(POSTS_API_URL)
   const result = []
   data.forEach((item) => {
@@ -37,27 +47,4 @@ async function queryFilterByKeys(keys) {
     )
   })
   return result
-}
-
-function filterByKey(itemData, targetKey, keyValue) {
-  return itemData.find((tItem) => tItem[targetKey] === keyValue)
-}
-
-function getPaginatedItems(itemsData, pageNumber, itemsPerPage) {
-  return itemsData.slice(
-    getPageFirstIndex(pageNumber, itemsPerPage),
-    getPageLastIndex(itemsData.length, pageNumber, itemsPerPage)
-  )
-}
-
-function getLastPageNumber(totalItems, itemsPerPage) {
-  return Math.ceil(totalItems / itemsPerPage)
-}
-
-function getPageFirstIndex(pageNumber, itemsPerPage) {
-  return (pageNumber - 1) * itemsPerPage
-}
-
-function getPageLastIndex(totalItems, pageNumber, itemsPerPage) {
-  return itemsPerPage <= totalItems ? itemsPerPage * pageNumber : totalItems
 }
