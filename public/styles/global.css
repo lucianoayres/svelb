@@ -63,7 +63,7 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
-  --color-code-primary: #e0e0e0;
+  --color-code-primary: #fafafa;
   --color-code-reserved-word: #fc69c1;
   --color-code-object-name: #bfabed;
   --color-code-method-name: #4ee718;
@@ -282,49 +282,6 @@ code {
   margin-left: var(--spacing-negative);
 }
 
-code span.reserved-word {
-  color: var(--color-code-reserved-word);
-}
-
-code span.object {
-  color: var(--color-code-object-name);
-}
-
-code span.method {
-  color: var(--color-code-method-name);
-}
-
-code span.parameter {
-  color: var(--color-code-parameter-name);
-}
-
-code span.string {
-  color: var(--color-code-string-value);
-}
-
-code span.punctuation {
-  color: var(--color-code-punctuation-character);
-}
-
-code div.highlight {
-  margin-left: calc(-1 * var(--spacing-6));
-  margin-right: calc(-1 * var(--spacing-6));
-  background-color: var(--color-code-highlight);
-  padding-left: calc(var(--spacing-6) - var(--spacing-1));
-  border-left: var(--spacing-1) solid var(--color-code-highlight-border);
-}
-
-/* Code in text */
-p > code,
-li > code,
-dd > code,
-td > code {
-  background: #ffeff0;
-  word-wrap: break-word;
-  box-decoration-break: clone;
-  padding: 50rem 0.3rem 0.2rem;
-}
-
 /* Custom classes */
 
 .global-wrapper {
@@ -419,6 +376,38 @@ td > code {
 
 .gatsby-highlight {
   margin-bottom: var(--spacing-8);
+}
+
+code span.reserved-word {
+  color: var(--color-code-reserved-word);
+}
+
+code span.object {
+  color: var(--color-code-object-name);
+}
+
+code span.method {
+  color: var(--color-code-method-name);
+}
+
+code span.parameter {
+  color: var(--color-code-parameter-name);
+}
+
+code span.string {
+  color: var(--color-code-string-value);
+}
+
+code span.punctuation {
+  color: var(--color-code-punctuation-character);
+}
+
+code div.highlight {
+  margin-left: calc(-1 * var(--spacing-6));
+  margin-right: calc(-1 * var(--spacing-6));
+  background-color: var(--color-code-highlight);
+  padding-left: calc(var(--spacing-6) - var(--spacing-1));
+  border-left: var(--spacing-1) solid var(--color-code-highlight-border);
 }
 
 /* Media queries */
