@@ -12,7 +12,9 @@
   } from './helpers'
   import { queryItemByKey } from './services/httpService'
 
-  let content = {
+  let content = {}
+
+  $: content = {
     post: null,
     page: 1
   }

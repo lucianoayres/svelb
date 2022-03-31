@@ -33,8 +33,9 @@
     </header>
     <main>
       {#if post}
-        <Post {post} />
-        <Bio />
+        <Post {post}>
+          <Bio />
+        </Post>
       {:else if page}
         <Bio />
         <List {page} />
