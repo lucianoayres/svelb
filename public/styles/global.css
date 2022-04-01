@@ -63,6 +63,7 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
+  --color-code-inline: #ffffd1;
   --color-code-primary: #fafafa;
   --color-code-reserved-word: #fc69c1;
   --color-code-object-name: #bfabed;
@@ -268,20 +269,6 @@ pre {
   tab-size: var(--spacing-4);
 }
 
-code {
-  display: block;
-  font-family: var(--fontFamily-monospace);
-  font-size: var(--fontSize-0);
-  font-weight: var(--fontWeight-medium);
-  overflow: auto;
-  border-radius: var(--spacing-3);
-  color: var(--color-code-primary);
-  background-color: var(--color-code-background);
-  padding: var(--spacing-6);
-  margin-right: var(--spacing-negative);
-  margin-left: var(--spacing-negative);
-}
-
 /* Custom classes */
 
 .global-wrapper {
@@ -391,41 +378,60 @@ code {
   margin: var(--spacing-0);
 }
 
-.gatsby-highlight {
-  margin-bottom: var(--spacing-8);
+code {
+  font-family: var(--fontFamily-monospace);
+  font-size: var(--fontSize-1);
+  background-color: var(--color-code-inline);
+  border-radius: var(--spacing-1);
+  padding-right: var(--spacing-1);
+  padding-left: var(--spacing-1);
 }
 
-code span.reserved-word {
+.code-snippet {
+  display: block;
+  font-family: var(--fontFamily-monospace);
+  font-size: var(--fontSize-0);
+  font-weight: var(--fontWeight-medium);
+  overflow: auto;
+  border-radius: var(--spacing-3);
+  color: var(--color-code-primary);
+  background-color: var(--color-code-background);
+  padding: var(--spacing-6);
+  margin-right: var(--spacing-negative);
+  margin-left: var(--spacing-negative);
+}
+
+.code-snippet .reserved-word {
   color: var(--color-code-reserved-word);
 }
 
-code span.object {
+.code-snippet .object {
   color: var(--color-code-object-name);
 }
 
-code span.method {
+.code-snippet .method {
   color: var(--color-code-method-name);
 }
 
-code span.parameter {
+.code-snippet .parameter {
   color: var(--color-code-parameter-name);
 }
 
-code span.string {
+.code-snippet .string {
   color: var(--color-code-string-value);
 }
 
-code span.punctuation {
+.code-snippet .punctuation {
   color: var(--color-code-punctuation-character);
 }
 
-code div.highlight {
+.code-snippet .highlight-line {
   margin-left: calc(-1 * var(--spacing-6));
   margin-right: calc(-1 * var(--spacing-6));
   background-color: var(--color-code-highlight);
   padding-left: calc(var(--spacing-6) - var(--spacing-1));
   border-left: var(--spacing-1) solid var(--color-code-highlight-border);
-  overflow: auto;
+  overflow: visible;
   display: block;
 }
 
@@ -440,8 +446,12 @@ code div.highlight {
   ol {
     list-style-position: inside;
   }
-  code {
+  .code-snippet {
     border-radius: var(--spacing-0);
     margin-right: calc(var(--spacing-negative) * 0.99);
+  }
+
+  .code-snippet .highlight-line {
+    width: 160%;
   }
 }
