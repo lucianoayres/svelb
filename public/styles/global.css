@@ -337,6 +337,23 @@ code {
   font-size: var(--fontSize-1);
 }
 
+.post-navigation a {
+  font-size: var(--fontSize-2);
+  box-shadow: 0 1px 0 0 var(--color-primary);
+  text-decoration: none;
+}
+
+.post-navigation a:hover,
+.post-naviation a:focus {
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+.post-navigation ul,
+.post-navigation li {
+  list-style-type: none;
+}
+
 .header-link-home {
   font-weight: var(--fontWeight-bold);
   font-family: var(--font-heading);
@@ -408,6 +425,8 @@ code div.highlight {
   background-color: var(--color-code-highlight);
   padding-left: calc(var(--spacing-6) - var(--spacing-1));
   border-left: var(--spacing-1) solid var(--color-code-highlight-border);
+  overflow: auto;
+  display: block;
 }
 
 /* Media queries */
@@ -423,5 +442,6 @@ code div.highlight {
   }
   code {
     border-radius: var(--spacing-0);
+    margin-right: calc(var(--spacing-negative) * 0.99);
   }
 }

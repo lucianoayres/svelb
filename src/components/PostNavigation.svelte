@@ -1,21 +1,19 @@
 <script>
-  export let previousHref
-  export let nextHref
+  export let previousHref = false
+  export let nextHref = false
 
   export let previousLabel = '← Prev Post'
   export let nextLabel = 'Next Post →'
 </script>
 
-<div class="post-list-navigation">
-  {#if previousHref}
-    <div>
-      <a href={previousHref}>{previousLabel}</a>
-    </div>
-  {/if}
+<div class="post-navigation">
+  <ul>
+    {#if previousHref}
+      <li><a href={previousHref}>{`← ${previousLabel}`}</a></li>
+    {/if}
 
-  {#if nextHref}
-    <div>
-      <a href={nextHref}>{nextLabel}</a>
-    </div>
-  {/if}
+    {#if nextHref}
+      <li><a href={nextHref}>{`${nextLabel} →`}</a></li>
+    {/if}
+  </ul>
 </div>

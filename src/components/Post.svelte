@@ -3,20 +3,13 @@
   import Seo from './Seo.svelte'
   import PostNavigation from './PostNavigation.svelte'
 
-  // TODO: Fix 'post.item...' variables, to update all data in the 'Post' component,
-  // without needing to 'post.item...'
   export let post
-
-  const { item, previous, next } = post
-  const { title, excerpt, date, content } = item
-
-  const previousHref = previous ? `#${POST_PATH}/${previous}` : null
-  const nextHref = next ? `#${POST_PATH}/${next}` : null
-
-  const pageTitle = `${title} - ${date} - ${BLOG_NAME}`
 </script>
 
-<Seo title={pageTitle} description={post.item.excerpt} />
+<Seo
+  title={`${post.item.title} - ${post.item.date} - ${BLOG_NAME}`}
+  description={post.item.excerpt}
+/>
 
 <article>
   <header>
@@ -32,7 +25,14 @@
 
 <slot />
 
-<PostNavigation {previousHref} {nextHref} />
+<PostNavigation
+  previousLabel={post.previous?.title ? post.previous?.title : ''}
+  previousHref={post.previous?.slug
+    ? `#${POST_PATH}/${post.previous.slug}`
+    : ''}
+  nextLabel={post.next?.title ? post.next.title : ''}
+  nextHref={post.next?.slug ? `#${POST_PATH}/${post.next.slug}` : ''}
+/>
 
 <style>
   article {
