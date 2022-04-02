@@ -8,7 +8,7 @@
 
   import Error from './Error.svelte'
   import Loading from './Loading.svelte'
-  import Navigation from './Navigation.svelte'
+  import PageNavigation from './PageNavigation.svelte'
   import Seo from './Seo.svelte'
   import Summary from './Summary.svelte'
 
@@ -39,7 +39,7 @@
   {#each posts as post}
     <Summary {post} />
   {/each}
-  <Navigation
+  <PageNavigation
     {page}
     {lastPage}
     previousHref={getPreviousPageHref(PAGE_PATH, page)}

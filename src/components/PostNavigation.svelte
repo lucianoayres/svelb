@@ -1,4 +1,5 @@
 <script>
+  import Link from './Link.svelte'
   export let previousHref = false
   export let nextHref = false
 
@@ -9,11 +10,11 @@
 <div class="post-navigation">
   <ul>
     {#if previousHref}
-      <li><a href={previousHref}>{`← ${previousLabel}`}</a></li>
+      <li><Link href={previousHref} label={`← ${previousLabel}`} /></li>
     {/if}
 
     {#if nextHref}
-      <li><a href={nextHref}>{`${nextLabel} →`}</a></li>
+      <li><Link href={nextHref} label={`${nextLabel} →`} /></li>
     {/if}
   </ul>
 </div>

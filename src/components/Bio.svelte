@@ -6,6 +6,8 @@
     AUTHOR_BIO_DESCRIPTION
   } from '../constants'
 
+  import Link from './Link.svelte'
+
   export let author = AUTHOR_NAME
   export let profileLink = AUTHOR_LINKEDIN_URL
   export let profileImageUrl = AUTHOR_PROFILE_IMAGE_URL
@@ -21,7 +23,7 @@
     alt={author}
   />
   <p>
-    Dev blog by <a href={profileLink} target="_blank">{author}</a>.
+    Dev blog by <Link href={profileLink} label={author} target="_blank" />.
     <span>{description}</span>
   </p>
 </div>

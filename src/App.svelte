@@ -19,6 +19,8 @@
     page: 1
   }
 
+  $: postNotFound = postNotFound
+
   async function hashChange() {
     const path = getPath()
     const isPost = checkPathType(path, POST_PATH)
@@ -27,11 +29,13 @@
     if (isPost) {
       const slugFromPath = getPostSlugFromPath(path, POST_PATH)
       content.post = await queryItemByKey('slug', slugFromPath)
-      content.post ? scrollToTop() : alert('Article not found')
+      content.post ? scrollToTop() : redirectToPage(1, PAGE_PATH)
     } else if (isPage) {
       content.page = getPageNumber(path, PAGE_PATH)
       content.post = null
+      console.log('isPage = true')
     } else {
+      console.log('Redirecting to home page')
       redirectToPage(1, PAGE_PATH)
     }
   }
@@ -40,4 +44,5 @@
 </script>
 
 <svelte:window on:hashchange={hashChange} />
+
 <Layout {...content} />

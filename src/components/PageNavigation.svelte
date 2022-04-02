@@ -1,4 +1,5 @@
 <script>
+  import Link from './Link.svelte'
   export let page
   export let lastPage
   export let previousHref
@@ -11,13 +12,13 @@
 <div class="post-list-navigation">
   {#if page > 1}
     <div>
-      <a href={previousHref}>{previousLabel}</a>
+      <Link href={previousHref} label={`${previousLabel}`} />
     </div>
   {/if}
 
   {#if page != lastPage}
     <div>
-      <a href={nextHref}>{nextLabel}</a>
+      <Link href={nextHref} label={`${nextLabel}`} />
     </div>
   {/if}
 </div>
