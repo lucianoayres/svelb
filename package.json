@@ -6,7 +6,7 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear --host 0.0.0.0",
-    "rss": "node ./src/helpers/generateRss.js"
+    "rss": "node ./src/scripts/generateRss.mjs"
   },
   "pre-commit": [
     "rss"
