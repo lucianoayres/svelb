@@ -21,7 +21,7 @@ const rssFeed = `<rss version="2.0">
   </channel>
 </rss>`
 
-fs.writeFile('../public/rss.xml', rssFeed, function (err) {
+fs.writeFile('../../public/rss.xml', rssFeed, function (err) {
   if (err) {
     return console.log(err)
   }
