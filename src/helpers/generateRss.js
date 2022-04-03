@@ -1,4 +1,5 @@
 const fs = require('fs')
+const process = require('process')
 
 const rssFeed = `<rss version="2.0">
   <channel>
@@ -20,6 +21,7 @@ const rssFeed = `<rss version="2.0">
     </item>
   </channel>
 </rss>`
+process.chdir('./public')
 console.log(__dirname)
 fs.writeFile('../../rss.xml', rssFeed, function (err) {
   if (err) {
