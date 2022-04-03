@@ -20,7 +20,7 @@ const rssFeed = `<rss version="2.0">
     </item>
   </channel>
 </rss>`
-
+console.log(__dirname)
 fs.writeFile('../../public/rss.xml', rssFeed, function (err) {
   if (err) {
     return console.log(err)
