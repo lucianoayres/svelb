@@ -21,8 +21,8 @@ const rssFeed = `<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modul
     </item>
   </channel>
 </rss>`
-process.chdir('./')
-fs.writeFile('../public/rss.xml', rssFeed, function (err) {
+process.chdir('./src')
+fs.writeFile('./public/rss.xml', rssFeed, function (err) {
   if (err) {
     return console.log(err)
   }
