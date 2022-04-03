@@ -27,5 +27,5 @@ fs.writeFile(`${projectRootPath}/public/rss.xml`, rssFeed, function (err) {
   if (err) {
     return console.log(err)
   }
-  console.log('[svelb] RSS file was generated succesfully!')
+  console.log('[svelb] RSS file was generated successfully!')
 })
