@@ -23,7 +23,7 @@ const rssFeed = `<rss version="2.0">
 </rss>`
 process.chdir('./public')
 console.log(__dirname)
-fs.writeFile('../rss.xml', rssFeed, function (err) {
+fs.writeFile('../public/rss.xml', rssFeed, function (err) {
   if (err) {
     return console.log(err)
   }
