@@ -16,10 +16,11 @@
 
   $: content = {
     post: null,
-    page: 1
+    page: 1,
+    postNotFound: false
   }
 
-  $: postNotFound = postNotFound
+  $: content.postNotFound
 
   async function hashChange() {
     const path = getPath()
@@ -29,13 +30,11 @@
     if (isPost) {
       const slugFromPath = getPostSlugFromPath(path, POST_PATH)
       content.post = await queryItemByKey('slug', slugFromPath)
-      content.post ? scrollToTop() : redirectToPage(1, PAGE_PATH)
+      content.post ? scrollToTop() : (content.postNotFound = true)
     } else if (isPage) {
       content.page = getPageNumber(path, PAGE_PATH)
       content.post = null
-      console.log('isPage = true')
     } else {
-      console.log('Redirecting to home page')
       redirectToPage(1, PAGE_PATH)
     }
   }

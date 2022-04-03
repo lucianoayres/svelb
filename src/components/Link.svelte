@@ -5,3 +5,9 @@
 </script>
 
 <a {href} {target}>{label}</a>
+
+<style>
+  a {
+    font-size: var(--fontSize-1);
+  }
+</style>

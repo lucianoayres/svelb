@@ -1,4 +1,8 @@
-<p class="loading">loading...</p>
+<script>
+  import { LOADING_MESSAGE } from '../constants'
+</script>
+
+<p class="loading">{LOADING_MESSAGE}</p>
 
 <style>
   .loading {
