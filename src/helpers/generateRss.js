@@ -1,7 +1,7 @@
 const fs = require('fs')
 const process = require('process')
 
-const rssFeed = `<rss version="2.0">
+const rssFeed = `<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Blog Name</title>
     <description>Blog Description</description>
