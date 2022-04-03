@@ -2,11 +2,12 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear --host 0.0.0.0",
-    "rss": "node ./src/scripts/generateRss.mjs"
+    "rss": "node ./src/scripts/generateRss.js"
   },
   "pre-commit": [
     "rss"
