@@ -1,4 +1,5 @@
 const fs = require('fs')
+const process = require('process')
 
 const rssFeed = `<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
@@ -20,7 +21,7 @@ const rssFeed = `<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modul
     </item>
   </channel>
 </rss>`
-
+process.chdir('./public')
 fs.writeFile('../public/rss.xml', rssFeed, function (err) {
   if (err) {
     return console.log(err)
