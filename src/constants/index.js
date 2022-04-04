@@ -1,16 +1,15 @@
 export const AUTHOR_NAME = 'Luciano Ayres'
 export const AUTHOR_BIO_DESCRIPTION =
-  'I write about coding and cloud technology.'
-export const AUTHOR_PROFILE_IMAGE_URL =
-  './images/profile/luciano-ayres-profile-pic.png'
+  'Based on Gatsby starter blog style and layout.'
+export const AUTHOR_PROFILE_IMAGE_URL = './images/profile/profile-pic.png'
 
-export const BLOG_NAME = 'cloudpoint'
-export const BLOG_DESCRIPTION = 'Ipsum lorem et al'
-export const BLOG_MAIN_PAGE_TITLE = `${BLOG_NAME} | A blog by ${AUTHOR_NAME}`
+export const BLOG_NAME = 'svelb'
+export const BLOG_DESCRIPTION = 'A basic Svelte blog'
+export const BLOG_MAIN_PAGE_TITLE = `${BLOG_NAME} | ${BLOG_DESCRIPTION} by ${AUTHOR_NAME}`
 
 export const AUTHOR_LINKEDIN_URL = 'https://linkedin.com/in/lucianoayres'
 export const AUTHOR_GITHUB_URL = 'https://github.com/lucianoayres'
-export const SOURCE_CODE_URL = 'https://github.com/example'
+export const SOURCE_CODE_URL = 'https://github.com/lucianoayres/repo/svelb'
 
 export const POSTS_PER_PAGE = 10
 
