@@ -4,7 +4,7 @@ export const AUTHOR_BIO_DESCRIPTION =
 export const AUTHOR_PROFILE_IMAGE_URL = './images/profile/profile-pic.png'
 
 export const BLOG_NAME = 'svelb'
-export const BLOG_DESCRIPTION = 'A basic Svelte blog'
+export const BLOG_DESCRIPTION = 'A Svelte blog'
 export const BLOG_MAIN_PAGE_TITLE = `${BLOG_NAME} | ${BLOG_DESCRIPTION} by ${AUTHOR_NAME}`
 
 export const AUTHOR_LINKEDIN_URL = 'https://linkedin.com/in/lucianoayres'

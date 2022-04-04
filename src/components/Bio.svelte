@@ -24,7 +24,11 @@
     alt={author}
   />
   <p>
-    {BLOG_DESCRIPTION} by <Link href={profileLink} label={author} target="_blank" />.
+    {BLOG_DESCRIPTION} by <Link
+      href={profileLink}
+      label={author}
+      target="_blank"
+    />.
     <span>{authorDescription}</span>
   </p>
 </div>
