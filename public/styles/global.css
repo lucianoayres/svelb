@@ -467,7 +467,7 @@ code {
 
   .code-snippet {
     border-radius: var(--spacing-0);
-    margin-right: calc(var(--spacing-negative) * 0.99);
+    margin-right: calc(var(--spacing-5) * -1);
   }
 
   .code-snippet .highlight-line {

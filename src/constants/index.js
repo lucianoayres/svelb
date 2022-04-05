@@ -1,6 +1,5 @@
 export const AUTHOR_NAME = 'Luciano Ayres'
-export const AUTHOR_BIO_DESCRIPTION =
-  'Based on Gatsby starter blog style and layout.'
+export const AUTHOR_BIO_DESCRIPTION = 'Based on Gatsby starter blog.'
 export const AUTHOR_PROFILE_IMAGE_URL = './images/profile/profile-pic.png'
 
 export const BLOG_NAME = 'svelb'
