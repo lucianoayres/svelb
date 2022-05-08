@@ -76,3 +76,7 @@ Then, from within your project folder:
 npm run build
 surge public my-project.surge.sh
 ```
+
+## License
+
+[MIT License](https://github.com/lucianoayres/svelb/blob/main/LICENSE)
