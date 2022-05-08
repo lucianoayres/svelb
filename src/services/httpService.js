@@ -27,7 +27,9 @@ export async function queryPaginatedData(
   order = 'DESC'
 ) {
   const data = await queryFilterByKeys(keys)
+
   const orderedData = orderItems(data, order)
+
   const mutatedData = addSlugToAllItems(orderedData)
 
   return {
