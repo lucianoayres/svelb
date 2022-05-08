@@ -10,7 +10,7 @@ Features:
 
 ## Demo
 
-View the [demo blog](https://svelb.vercel.app) hosted on [Vercel](#Deploying to the web).
+View the [demo blog](https://svelb.vercel.app) hosted on [Vercel](README.md#Deploying to the web).
 
 ![svelb_demo](https://user-images.githubusercontent.com/20209393/167311086-4da0038c-1857-463f-8127-5d30b871336b.gif)
 
