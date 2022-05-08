@@ -31,8 +31,6 @@ yarn dev
 
 Navigate to [localhost:8080](http://localhost:8080). You should see the blog running. Edit a component file in `src`, save it, and reload the page to see your changes.
 
-Happy hacking!
-
 ## Usage
 
 Edit `posts.json` file in `data`. Posts are ordered by id in descending order by default.
